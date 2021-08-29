@@ -20,9 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -37,18 +37,19 @@
                 <a href="#" class="brand-logo"> <i class="bi bi-archive"></i> <span>BRAND</span> </a>
             </header>
             <nav class="dashboard-nav-list">
-                <a href="{{ url('/home') }}" class="dashboard-nav-item active"><i class="bi bi-house-door-fill"></i> HOME </a>
+                <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
+                <div class="nav-item-divider"></div>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
-                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
+                <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
 
                 <div class="nav-item-divider"></div>
                 @guest
-                <a href="{{ route('login') }}" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="bi bi-person-circle"></i> {{ __('Login') }} </a>
+                <a href="{{ route('login') }}" class="dashboard-nav-item"><i class="bi bi-person-circle"></i> {{ __('Login') }} </a>
 
                 @if (Route::has('register'))
-                <a href="{{ route('login') }}" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="bi bi-person-circle"></i> {{ __('Register') }}</a>
+                <a href="{{ route('login') }}" class="dashboard-nav-item"><i class="bi bi-person-circle"></i> {{ __('Register') }}</a>
                 @endif
 
                 @else
