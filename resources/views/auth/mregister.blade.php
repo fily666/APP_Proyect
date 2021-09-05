@@ -9,7 +9,7 @@
 
             <h3 class="login-heading mb-4 text-center">Registrate!</h3>
 
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST">
                 @csrf
 
                 <div class="form-group row">
