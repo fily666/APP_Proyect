@@ -362,7 +362,7 @@ h1, .h1 {
 }
 
 .dashboard-toolbar {
-    min-height: 84px;
+    min-height: 74px;
     background-color: #dfdfdf;
     display: -webkit-box;
     display: -webkit-flex;
@@ -431,7 +431,7 @@ h1, .h1 {
 
 @media (min-width: 992px) {
     .dashboard-toolbar {
-        left: 238px;
+        left: 248px;
     }
 
     .dashboard-compact .dashboard-toolbar {
