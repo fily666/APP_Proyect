@@ -57,35 +57,34 @@
                     <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-eraser-fill"></i></button>
                 </td>
             </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <h3>Esta seguro de eliminar el usuario</h3>
+                            <strong> {{$userr->name}}</strong>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Confirmar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             @endforeach
         </table>
         {!! $usuario->links() !!}
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="text-align: center;">
-                    <h3>Esta seguro de eliminar el usuario</h3>
-                    <strong> {{$userr->name}}</strong>
-                </div>
-                <div class="modal-footer">
-                    <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Confirmar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 
     @endsection
