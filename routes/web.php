@@ -24,3 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('usuarios', 'UserController');
 
 Route::resource('portafolios', 'PortafolioController');
+
+Route::resource('expertos', 'ExpertoController');
