@@ -71,7 +71,6 @@
                         </div>
                         <div class="modal-body" style="text-align: center;">
                             <h3>Esta seguro de eliminar el Producto</h3>
-                            <strong> {{$Producto->name}}</strong>
                         </div>
                         <div class="modal-footer">
                             <form action="{{ route('portafolios.destroy',$Producto->id) }}" method="POST">

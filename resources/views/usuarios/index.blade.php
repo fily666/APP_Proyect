@@ -69,7 +69,6 @@
                         </div>
                         <div class="modal-body" style="text-align: center;">
                             <h3>Esta seguro de eliminar el usuario</h3>
-                            <strong> {{$userr->name}}</strong>
                         </div>
                         <div class="modal-footer">
                             <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
