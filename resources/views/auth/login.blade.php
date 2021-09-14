@@ -11,7 +11,7 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group mb-3">
-                    <input id="email" type="email" placeholder="Dirección de correo electrónico" name="email" class="form-control rounded-pill border-0 shadow-sm px-4 @error('email') is-invalid @enderror" value="admin@gmail.com" required autocomplete="email" autofocus>
+                    <input id="email" type="email" placeholder="Dirección de correo electrónico" name="email" class="form-control rounded-pill border-0 shadow-sm px-4 @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <input id="password" type="password" name="password" placeholder="Contraseña" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary @error('password') is-invalid @enderror" value="123456789" required autocomplete="current-password">
+                    <input id="password" type="password" name="password" placeholder="Contraseña" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary @error('password') is-invalid @enderror" required autocomplete="current-password">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
