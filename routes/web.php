@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('usuarios', 'UserController');
+Route::group(['middleware' => 'admin'], function () {
 
-Route::resource('portafolios', 'PortafolioController');
-
-Route::resource('expertos', 'ExpertoController');
+    Route::resource('usuarios', 'UserController');
+    Route::resource('portafolios', 'PortafolioController');
+    Route::resource('expertos', 'ExpertoController');
+});
