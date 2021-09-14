@@ -37,13 +37,26 @@
                 <a href="#" class="brand-logo"> <i class="bi bi-archive"></i> <span>BRAND</span> </a>
             </header>
             <nav class="dashboard-nav-list">
+                
+                @if(Auth::check())
+                @if(Auth::user()->role_id && Auth::user()->role_id == 1)
                 <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('portafolios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
                 <a href="{{ route('expertos.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PROFESIONALES </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
+                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
+                @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
+                <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
+                <div class="nav-item-divider"></div>
+                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
+                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
+                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
+                <br> <br> <br> <br> <br>
+                @endif
+                @endif
 
                 <div class="nav-item-divider"></div>
                 @guest
