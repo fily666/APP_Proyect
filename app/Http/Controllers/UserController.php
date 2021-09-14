@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+  /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
 
   /**
    * Display a listing of the resource.
@@ -46,7 +57,12 @@ class UserController extends Controller
       'password' => ['required', 'string', 'min:8', 'confirmed'],
     ]);
 
-    User::create($request->all());
+    $userr = new User();
+
+    $userr->name = $request->name;
+    $userr->email = $request->email;
+    $userr->password = Hash::make($request['password']);
+    $userr->save();
 
     return redirect()->route('usuarios.index')
       ->with('success', 'Usuario creado con éxito.');
@@ -88,8 +104,13 @@ class UserController extends Controller
       'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($usuario->id)],
       'password' => ['required', 'string', 'min:8', 'confirmed'],
     ]);
+    
+    $usuario->update();
 
-    $usuario->update($request->all());
+    $usuario->name = $request->name;
+    $usuario->email = $request->email;
+    $usuario->password = Hash::make($request['password']);
+    $usuario->save();
 
     return redirect()->route('usuarios.index')
       ->with('warning', 'Usuario actualizado con éxito');
