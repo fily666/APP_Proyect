@@ -15,18 +15,18 @@
 
     <!-- CSS Files
     ================================================== -->
-    <link rel="stylesheet" href="{{asset ('css/bootstrap.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/animate.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/owl.carousel.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/magnific-popup.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/stylesss.css')}}" />
+    <link rel="stylesheet" href="{{secure_asset('css/bootstrap.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/animate.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/owl.carousel.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/stylesss.css')}}" />
 
     <!-- background -->
-    <link rel="stylesheet" href="{{asset ('css/bg.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/bg.css')}}" type="text/css">
 
     <!-- color scheme -->
-    <link rel="stylesheet" href="{{asset ('css/colors/scheme-2.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{secure_asset('css/colors/scheme-2.css')}}" type="text/css">
 </head>
 
 <body id="homepage">
@@ -115,22 +115,22 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="{{asset ('js/jquery.min.js')}}"></script>
-    <script src="{{asset ('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.isotope.min.js')}}"></script>
-    <script src="{{asset ('js/easing.js')}}"></script>
-    <script src="{{asset ('js/owl.carousel.js')}}"></script>
-    <script src="{{asset ('js/jquery.countTo.js')}}"></script>
-    <script src="{{asset ('js/validation.js')}}"></script>
-    <script src="{{asset ('js/wow.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset ('js/enquire.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.stellar.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.plugin.js')}}"></script>
-    <script src="{{asset ('js/typed.js')}}"></script>
-    <script src="{{asset ('js/typed-custom.js')}}"></script>
-    <script src="{{asset ('js/designesia.js')}}"></script>
-    <script src="{{asset ('js/script.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.min.js')}}"></script>
+    <script src="{{secure_asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.isotope.min.js')}}"></script>
+    <script src="{{secure_asset('js/easing.js')}}"></script>
+    <script src="{{secure_asset('js/owl.carousel.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.countTo.js')}}"></script>
+    <script src="{{secure_asset('js/validation.js')}}"></script>
+    <script src="{{secure_asset('js/wow.min.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{secure_asset('js/enquire.min.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.stellar.min.js')}}"></script>
+    <script src="{{secure_asset('js/jquery.plugin.js')}}"></script>
+    <script src="{{secure_asset('js/typed.js')}}"></script>
+    <script src="{{secure_asset('js/typed-custom.js')}}"></script>
+    <script src="{{secure_asset('js/designesia.js')}}"></script>
+    <script src="{{secure_asset('js/script.js')}}"></script>
 
 </body>
 
