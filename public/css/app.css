@@ -135,7 +135,8 @@ h1, .h1 {
 }
 
 .dashboard-nav {
-    min-width: 238px;
+    min-width: 248px;
+    max-width: 248PX;
     position: fixed;
     left: 0;
     top: 0;
