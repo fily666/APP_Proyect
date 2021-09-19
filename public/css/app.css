@@ -226,7 +226,7 @@ h1, .h1 {
 }
 
 .dashboard-nav-item {
-    min-height: 56px;
+    min-height: 50px;
     padding: 8px 20px 8px 70px;
     display: -webkit-box;
     display: -webkit-flex;

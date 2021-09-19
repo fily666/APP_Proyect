@@ -37,7 +37,7 @@
                 <a href="#" class="brand-logo"> <i class="bi bi-archive"></i> <span>BRAND</span> </a>
             </header>
             <nav class="dashboard-nav-list">
-                
+
                 @if(Auth::check())
                 @if(Auth::user()->role_id && Auth::user()->role_id == 1)
                 <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
