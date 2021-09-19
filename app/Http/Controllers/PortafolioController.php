@@ -75,7 +75,7 @@ class PortafolioController extends Controller
      */
     public function show(Portafolio $portafolio)
     {
-        return view('Portafolios.show', compact('portafolio'));
+        return view('portafolios.show', compact('portafolio'));
     }
 
     /**
