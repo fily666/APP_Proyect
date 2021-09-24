@@ -40,8 +40,8 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- close gallery item -->  
-                    
+                    <!-- close gallery item -->
+
                 </div>
             </div>
             <!-- portfolio filter close -->
@@ -49,4 +49,36 @@
     </div>
 </section>
 <!-- section close -->
+
+<!-- section begin -->
+<section id="section-testimonial" class="text-light" data-bgcolor="#252525">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <!-- <h5><span class="id-color">Profesionales</span></h5> -->
+                <h2>Profesionales</h2>
+            </div>
+            <div id="testimonial-carousel" class="de_carousel sequence" data-wow-delay=".3s">
+
+                @foreach ($experto as $prof)
+                <div class="col-md-6 item sq-item wow">
+                    <div class="de_testi opt-2">
+                        <blockquote>
+                            <div class="de_testi_by">
+                                <img src="/images/misc/pic-profile-2.jpg" class="img-circle" alt="">
+                                <span>{{ $prof ->name }}</span>
+                            </div>
+                            <p>{{ $prof ->detail }}</p>
+                        </blockquote>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section close -->
+
+
 @endsection
