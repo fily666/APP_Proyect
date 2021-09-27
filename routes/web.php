@@ -20,7 +20,6 @@ Route::get('/barberia', 'welcomeController@viewbarberia')->name('Barberia');
 Route::get('/tattoo', 'welcomeController@viewtattoo')->name('Tattoo');
 
 
-
 Auth::routes();
 
 
@@ -31,4 +30,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('usuarios', 'UserController');
     Route::resource('portafolios', 'PortafolioController');
     Route::resource('expertos', 'ExpertoController');
+    Route::resource('servicios', 'ServicioController');
+
 });

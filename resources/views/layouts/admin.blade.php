@@ -46,6 +46,7 @@
                 <a href="{{ route('expertos.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PROFESIONALES </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
+                <a href="{{ route('servicios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> SERVICIOS </a>
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
                 @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
