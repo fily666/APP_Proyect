@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Experto;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class ExpertoController extends Controller
@@ -38,7 +39,9 @@ class ExpertoController extends Controller
      */
     public function create()
     {
-        return view('expertos.create');
+        $categorias = Categoria::all();
+
+        return view('expertos.create', compact('categorias'));
     }
 
     /**
@@ -74,7 +77,9 @@ class ExpertoController extends Controller
      */
     public function edit(Experto $experto)
     {
-        return view('expertos.edit', compact('experto'));
+        $categorias = Categoria::all();
+
+        return view('expertos.edit', compact('experto'), compact('categorias'));
     }
 
     /**
