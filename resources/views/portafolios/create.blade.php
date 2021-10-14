@@ -12,7 +12,7 @@
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del producto') }}</label>
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" required >
+                <input id="name" type="text" class="form-control" name="name" required>
             </div>
         </div>
 
@@ -24,16 +24,21 @@
         </div>
 
         <div class="form-group row">
-            <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Etiqueta') }}</label>
+            <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
-                <input id="etiquetas" type="text" class="form-control" name="etiquetas" required >
+                <select name="categoria_id" class="form-control" id="sel1" required>
+                    <option value=""> ----- Seleccionar -----</option>
+                    @foreach($categorias as $categoria)
+                    <option value="{{ $categoria['id'] }}">{{ $categoria['name'] }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
             <div class="col-md-6">
-                <textarea id="detail" style="height:150px" class="form-control" name="detail"  required></textarea>
+                <textarea id="detail" style="height:150px" class="form-control" name="detail" required></textarea>
             </div>
         </div>
 

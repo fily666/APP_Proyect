@@ -44,14 +44,14 @@
                 <th>Precio</th>
                 <th>Categoria</th>
                 <th>Fecha</th>
-                <th>Acciónes</th>   
+                <th>Acciónes</th>
             </tr>
             @foreach($servicio as $servii)
             <tr>
                 <th>{{$servii->id}} </th>
                 <td>{{$servii->name}} </td>
                 <td>{{$servii->precio}} </td>
-                <td>{{$servii->categoria}} </td>
+                <td>{{$servii->categoria->name}} </td>
                 <td>{{$servii->created_at}} </td>
                 <td>
                     <a class="btn btn-info" href="{{ route('servicios.show',$servii->id) }}"><i class="bi bi-eye-fill"></i></a>

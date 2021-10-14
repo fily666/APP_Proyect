@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Servicio;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class ServicioController extends Controller
 {
-   /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -16,7 +17,7 @@ class ServicioController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +28,7 @@ class ServicioController extends Controller
         $servicio = Servicio::latest()->paginate(5);
 
         return view('servicios.index', compact('servicio'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -37,7 +38,9 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        return view('servicios.create');
+        $categorias = Categoria::all();
+
+        return view('servicios.create', compact('categorias'));
     }
 
     /**
@@ -73,7 +76,9 @@ class ServicioController extends Controller
      */
     public function edit(Servicio $servicio)
     {
-        return view('servicios.edit', compact('servicio'));
+        $categorias = Categoria::all();
+
+        return view('servicios.edit', compact('servicio'), compact('categorias'));
     }
 
     /**

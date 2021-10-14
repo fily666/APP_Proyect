@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
     protected $fillable = [
-        'name', 'categoria', 'precio', 'detail'
+        'name', 'categoria_id', 'precio', 'detail'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

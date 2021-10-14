@@ -15,7 +15,7 @@
     <div class="form-group row">
         <strong class="col-md-4 col-form-label text-md-right">Categoria</strong>
         <div class="col-md-6">
-            {{ $servicio->categoria }}
+            {{ $servicio->categoria->name }}
         </div>
     </div>
     <div class="form-group row">

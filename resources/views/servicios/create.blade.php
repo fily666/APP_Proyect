@@ -16,14 +16,14 @@
             </div>
         </div>
 
-
         <div class="form-group row">
             <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
-                <select name="categoria" class="form-control" id="sel1">
-                    <option> ----- Seleccionar -----</option>
-                    <option value="1">Barberia</option>
-                    <option value="2">Tattoo</option>
+                <select name="categoria_id" class="form-control" id="sel1" required>
+                    <option value=""> ----- Seleccionar -----</option>
+                    @foreach($categorias as $categoria)
+                    <option value="{{ $categoria['id'] }}">{{ $categoria['name'] }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

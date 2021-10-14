@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Portafolio;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
@@ -41,7 +42,9 @@ class PortafolioController extends Controller
      */
     public function create()
     {
-        return view('portafolios.create');
+        $categorias = Categoria::all();
+
+        return view('portafolios.create', compact('categorias'));
     }
 
     /**
@@ -59,7 +62,7 @@ class PortafolioController extends Controller
 
         $artuculo->name = $request->name;
         $artuculo->imagen = $imagen;
-        $artuculo->etiquetas = $request->etiquetas;
+        $artuculo->categoria_id = $request->categoria_id;
         $artuculo->detail = $request->detail;
         $artuculo->save();
 
@@ -86,7 +89,9 @@ class PortafolioController extends Controller
      */
     public function edit(Portafolio $portafolio)
     {
-        return view('portafolios.edit', compact('portafolio'));
+        $categorias = Categoria::all();
+
+        return view('portafolios.edit', compact('portafolio'), compact('categorias'));
     }
 
     /**
@@ -106,7 +111,7 @@ class PortafolioController extends Controller
 
         $portafolio->name = $request->name;
         $portafolio->imagen = $imagen;
-        $portafolio->etiquetas = $request->etiquetas;
+        $portafolio->categoria_id = $request->categoria_id;
         $portafolio->detail = $request->detail;
         $portafolio->save();
 

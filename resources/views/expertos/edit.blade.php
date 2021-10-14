@@ -22,8 +22,8 @@
             <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
                 <select name="categoria_id" class="form-control" id="sel1" required>
+                    <option style='display: none' value="{{ $experto->categoria_id }}" selected>{{ $experto->categoria->name }}</option>
                     <option value=""> ----- Seleccionar -----</option>
-                    <option style="font-size:0;" value="{{ $experto->categoria_id }}" selected>{{ $experto->categoria->name }}</option>
                     @foreach($categorias as $categoria)
                     <option value="{{ $categoria['id'] }}">{{ $categoria['name'] }}</option>
                     @endforeach
