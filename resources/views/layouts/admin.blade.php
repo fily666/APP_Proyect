@@ -45,7 +45,7 @@
                 <a href="{{ route('portafolios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
                 <a href="{{ route('expertos.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PROFESIONALES </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
-                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
+                <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="{{ route('servicios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> SERVICIOS </a>
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
@@ -53,7 +53,7 @@
                 <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
-                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
+                <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
                 <br> <br> <br> <br> <br>
                 @endif

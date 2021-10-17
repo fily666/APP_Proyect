@@ -25,6 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('citas', 'CitaController');
+
+
 Route::group(['middleware' => 'admin'], function () {
 
     Route::resource('usuarios', 'UserController');
