@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <h1>Detalles del Profesional.</h1>
+    <h1>Detalles del Servicio.</h1>
 
     <a class="btn btn-primary" href="{{ route('servicios.index') }}"><i class="bi bi-arrow-left-circle-fill"></i> Volver</a>
 
     <div class="form-group row">
         <strong class="col-md-4 col-form-label text-md-right">Nombre del Servicio</strong>
         <div class="col-md-6">
-            {{ $servicio->name }}
+            {{ $servicio->title }}
         </div>
     </div>
     <div class="form-group row">
@@ -19,9 +19,15 @@
         </div>
     </div>
     <div class="form-group row">
-        <strong class="col-md-4 col-form-label text-md-right">Precio</strong>
+        <strong class="col-md-4 col-form-label text-md-right">Precio $</strong>
         <div class="col-md-6">
             {{ $servicio->precio }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <strong class="col-md-4 col-form-label text-md-right">Duracion del servicio en minutos</strong>
+        <div class="col-md-6">
+            {{ $servicio->duracion }}
         </div>
     </div>
     <div class="form-group row">

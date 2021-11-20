@@ -10,9 +10,9 @@
         @csrf
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del profesional') }}</label>
+            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del profesional') }}</label>
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" required>
+                <input id="title" type="text" class="form-control" name="title" required>
             </div>
         </div>
 

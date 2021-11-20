@@ -42,6 +42,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Precio</th>
+                <th>Duracion del servicio</th>
                 <th>Categoria</th>
                 <th>Fecha</th>
                 <th>Acciónes</th>
@@ -49,8 +50,9 @@
             @foreach($servicio as $servii)
             <tr>
                 <th>{{$servii->id}} </th>
-                <td>{{$servii->name}} </td>
-                <td>{{$servii->precio}} </td>
+                <td>{{$servii->title}} </td>
+                <td>$ {{$servii->precio}} </td>
+                <td>{{$servii->duracion}} </td>
                 <td>{{$servii->categoria->name}} </td>
                 <td>{{$servii->created_at}} </td>
                 <td>

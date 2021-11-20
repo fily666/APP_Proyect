@@ -49,7 +49,7 @@
             @foreach($experto as $person)
             <tr>
                 <th>{{$person->id}} </th>
-                <td>{{$person->name}} </td>
+                <td>{{$person->title}} </td>
                 <td>{{$person->detail}} </td>
                 <td>{{$person->categoria->name}} </td>
                 <td>{{$person->created_at}} </td>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Portafolio extends Model
 {
     protected $fillable = [
-        'name', 'imagen', 'categoria_id', 'detail'
+        'id', 'name', 'imagen', 'categoria_id', 'detail'
     ];
 
     public function categoria()

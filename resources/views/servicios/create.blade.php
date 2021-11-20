@@ -10,14 +10,14 @@
         @csrf
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del Servicio') }}</label>
+            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Nombre del Servicio') }}</label>
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" required>
+                <input id="title" type="text" class="form-control" name="title" required>
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
+            <label for="categoria_id" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
                 <select name="categoria_id" class="form-control" id="sel1" required>
                     <option value=""> ----- Seleccionar -----</option>
@@ -29,9 +29,16 @@
         </div>
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Presio') }}</label>
+            <label for="precio" class="col-md-4 col-form-label text-md-right">{{ __('Presio $') }}</label>
             <div class="col-md-6">
                 <input id="precio" type="number" class="form-control" name="precio" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="duracion" class="col-md-4 col-form-label text-md-right">{{ __('Duracion del servicio en minutos') }}</label>
+            <div class="col-md-6">
+                <input id="duracion" type="number" class="form-control" name="duracion" required>
             </div>
         </div>
 
