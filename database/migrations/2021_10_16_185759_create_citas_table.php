@@ -15,8 +15,18 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->text('detail');
+
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+
+            $table->unsignedBigInteger('title');
+            $table->foreign('title')->references('id')->on('servicios');
+
+            $table->unsignedBigInteger('resourceId');
+            $table->foreign('resourceId')->references('id')->on('expertos');
+
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->timestamps();
         });
     }

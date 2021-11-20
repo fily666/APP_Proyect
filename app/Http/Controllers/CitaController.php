@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Cita;
+use App\Categoria;
+use App\Servicio;
+use App\Experto;
+
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
@@ -24,10 +28,19 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $reserva = Cita::latest()->paginate(5);
+        $reserva = Cita::all();
 
-        return view('citas.index', compact('reserva'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $expertos = Experto::all();
+        $servicios = Servicio::all();
+
+        return view(
+            'citas.index',
+            [
+                'rese' => $reserva,
+                'serv' => $servicios,
+                'expe' => $expertos
+            ]
+        );
     }
 
     /**
@@ -37,7 +50,18 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('citas.create');
+        $categorias = Categoria::all();
+        $servicios = Servicio::all();
+        $expertos = Experto::all();
+        
+        return view(
+            'citas.create',
+            [
+                'cate' => $categorias,
+                'serv' => $servicios,
+                'expe' => $expertos
+            ]
+        );
     }
 
     /**
