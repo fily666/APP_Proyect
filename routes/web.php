@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'welcomeController@index')->name('/');
+Route::get('/', 'WelcomeController@index')->name('/');
 
-Route::get('/barberia', 'welcomeController@viewbarberia')->name('Barberia');
-Route::get('/tattoo', 'welcomeController@viewtattoo')->name('Tattoo');
+Route::get('/barberia', 'WelcomeController@viewbarberia')->name('Barberia');
+Route::get('/tattoo', 'WelcomeController@viewtattoo')->name('Tattoo');
 
 
 Auth::routes();
@@ -26,6 +26,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('citas', 'CitaController');
+Route::resource('reportes', 'ReporteController');
+
 
 
 Route::group(['middleware' => 'admin'], function () {
