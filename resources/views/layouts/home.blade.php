@@ -2,135 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Peluqueria</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profession is Personal Portfolio Template">
-    <meta name="keywords" content="business, clean, contact form, corporate, cv, light, minimalist, modern, personal, personal profile, portfolio, resume, vcard, virtual card">
-    <meta name="author" content="">
+    <title>BET</title>
 
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
 
-    <!-- CSS Files
-    ================================================== -->
-    <link rel="stylesheet" href="{{asset ('css/bootstrap.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/animate.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/owl.carousel.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/magnific-popup.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset ('css/stylesss.css')}}" />
+    <link rel="stylesheet" href="{{ asset('page/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/animate.css') }}">
 
-    <!-- background -->
-    <link rel="stylesheet" href="{{asset ('css/bg.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('page/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/magnific-popup.css') }}">
 
-    <!-- color scheme -->
-    <link rel="stylesheet" href="{{asset ('css/colors/scheme-2.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('page/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('page/css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('page/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/jquery.timepicker.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('page/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('page/css/style.css') }}">
+
 </head>
 
-<body id="homepage">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="flaticon-scissors-in-a-hair-salon-badge"></span>B.E.T</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
 
-    <div id="wrapper">
-
-        <!-- header begin -->
-        <header class="autoshow">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- logo begin -->
-                        <div id="logo">
-                            <a href="#wrapper">
-                                <!-- <img class="logo" src="images/logo-light.png" alt="">
-                            <img class="logo-2" src="images/logo-dark.png" alt=""> -->
-                            </a>
-                        </div>
-                        <!-- logo close -->
-
-                        <!-- small button begin -->
-                        <span id="menu-btn"></span>
-                        <!-- small button close -->
-
-                        <!-- mainmenu begin -->
-                        <nav>
-                            <ul id="mainmenu">
-                                <li><a class="active" href="#top">Inicio<span></span></a></li>
-                                <li><a href="#section-about">Quienes somos<span></span></a></li>
-                                <!-- <li><a href="#section-services">Services<span></span></a></li> -->
-                                <li><a href="#section-portfolio">Portafolio<span></span></a></li>
-                                <!-- <li><a href="#section-experiences">Experiences<span></span></a></li> -->
-                                <li><a href="#section-contact">Contactenos<span></span></a></li>
-                                <li><a href="{{ route('login') }}">Inisiar sesion<span></span></a></li>
-                            </ul>
-                        </nav>
-
-                    </div>
-                    <!-- mainmenu close -->
-
-                </div>
-            </div>
-        </header>
-        <!-- header close -->
-
-        @yield('content')
-
-
-    </div>
-
-    <!-- footer begin -->
-    <footer>
-        <div class="container text-center text-light">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="social-icons big">
-                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
-                    </div>
-                </div>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="{{route('/')}}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{route('Barberia')}}" class="nav-link">Barberia</a></li>
+                    <li class="nav-item"><a href="{{route('Tattoo')}}" class="nav-link">Tattoo</a></li>
+                    <li class="nav-item"><a href="{{route('Blog')}}" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="{{route('Contact')}}" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Inisiar secion</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
+    <!-- END nav -->
 
-        <div class="subfooter">
-            <div class="container text-center">
-                <div class="row">
+
+
+    @yield('content')
+
+
+
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2 logo">Haircare</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">FAQs</a></li>
+                            <li><a href="#" class="py-2 d-block">Privacy</a></li>
+                            <li><a href="#" class="py-2 d-block">Terms Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Home</a></li>
+                            <li><a href="#" class="py-2 d-block">About</a></li>
+                            <li><a href="#" class="py-2 d-block">Services</a></li>
+                            <li><a href="#" class="py-2 d-block">Work</a></li>
+                            <li><a href="#" class="py-2 d-block">Blog</a></li>
+                            <li><a href="#" class="py-2 d-block">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- footer close -->
 
-    <a href="#" id="back-to-top"></a>
-    <div id="preloader">
-        <div class="s1">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    </div>
 
-    <!-- Javascript Files
-    ================================================== -->
-    <script src="{{asset ('js/jquery.min.js')}}"></script>
-    <script src="{{asset ('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.isotope.min.js')}}"></script>
-    <script src="{{asset ('js/easing.js')}}"></script>
-    <script src="{{asset ('js/owl.carousel.js')}}"></script>
-    <script src="{{asset ('js/jquery.countTo.js')}}"></script>
-    <script src="{{asset ('js/validation.js')}}"></script>
-    <script src="{{asset ('js/wow.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset ('js/enquire.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.stellar.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.plugin.js')}}"></script>
-    <script src="{{asset ('js/typed.js')}}"></script>
-    <script src="{{asset ('js/typed-custom.js')}}"></script>
-    <script src="{{asset ('js/designesia.js')}}"></script>
-    <script src="{{asset ('js/script.js')}}"></script>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+
+    <script src="{{ asset('page/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('page/js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('page/js/popper.min.js') }}"></script>
+    <script src="{{ asset('page/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('page/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('page/js/aos.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('page/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('page/js/jquery.timepicker.min.js') }}"></script>
+    <script src="{{ asset('page/js/scrollax.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{{ asset('page/js/google-map.js') }}"></script>
+    <script src="{{ asset('page/js/main.js') }}"></script>
 
 </body>
 

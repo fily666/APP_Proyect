@@ -51,7 +51,7 @@
 
                 @if(Auth::check())
                 @if(Auth::user()->role_id && Auth::user()->role_id == 1)
-                <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
+                <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('portafolios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
                 <a href="{{ route('expertos.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PROFESIONALES </a>
@@ -61,7 +61,7 @@
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="{{ route('reportes.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
                 @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
-                <a href="{{ url('/home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
+                <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
                 <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>

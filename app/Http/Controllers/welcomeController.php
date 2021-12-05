@@ -15,18 +15,21 @@ class WelcomeController extends Controller
 
     public function viewbarberia()
     {
-        $portafolio = Portafolio::latest()->paginate(5);
-        $experto = Experto::latest()->paginate(5);
-
-        return view('home.barberia', compact('experto'), compact('portafolio'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('home.barberia');
     }
 
     public function viewtattoo()
     {
-        $portafolio = Portafolio::latest()->paginate(5);
+        return view('home.tattoo');
+    }
 
-        return view('home.tattoo', compact('portafolio'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+    public function viewblog()
+    {
+        return view('home.blog');
+    }
+
+    public function viewcontact()
+    {
+        return view('home.contact');
     }
 }

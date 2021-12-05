@@ -2,154 +2,47 @@
 
 @section('content')
 
-
-<!-- content begin -->
-<div id="content" class="no-bottom no-top">
-    <div id="top"></div>
-
-    <!-- section begin -->
-    <section id="section-hero-5" aria-label="section-hero" class="full-height relative no-top no-bottom text-light" data-stellar-background-ratio=".2">
-        <div class="overlay-solid">
-            <div class="overlay-bg t80">
-                <div class="center-y fadeScroll relative" data-scroll-speed="4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <div class="spacer-double"></div>
-
-                                <img src="images/misc/logo-1.png" alt="">
-                                <div class="spacer-double"></div>
-
-                            </div>
-                        </div>
-                    </div>
+<section class="hero-wrap js-fullheight" style="background-image: url(page/images/bg-2.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+            <div class="col-lg-12 ftco-animate d-flex align-items-center">
+                <div class="text text-center">
+                    <span class="subheading">BIENVENIDOS A B.E.T</span>
+                    <h1 class="mb-4">SOMOS PROFESIONALES</h1>
+                    <p><a href="{{ route('citas.create') }}" class="btn btn-primary btn-outline-primary px-4 py-2">Reservar ahora</a></p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- section close -->
+    </div>
+    </div>
+</section>
 
-    <!-- section begin -->
-    <section id="section-about" class="text-light" data-bgcolor="#252525">
-        <div class="container relative">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="pr20">
-                        <img src="images/misc/pic-profile-3.jpg" class="img-auto img-rounded img-responsive" alt="">
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid px-0">
+        <div class="row no-gutters">
+            <div class="col-md text-center d-flex align-items-stretch">
+                <div class="services-wrap d-flex align-items-center img" style="background-image: url(page/images/formen.jpg);">
+                    <div class="text">
+                        <h3>Barberia</h3>
+                        <p><a href="{{route('Barberia')}}" class="btn-custom">Portafolio<span class="ion-ios-arrow-round-forward"></span></a></p>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="spacer-half"></div>
-                    <h5><span class="id-color">Quienes somos</span></h5>
-                    <h2>A Quick Bio</h2>
-
-                    <p>I am a website designer from London, with a strong focus in UI/UX design. I love to get new experiences and always learn from my surroundings. I've done more than 285 projects. You can check it through portfolio section on
-                        this website. I looking forward to any opportunities and challenges. </p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                </div>
-
-                <div class="spacer-double"></div>
             </div>
-        </div>
-    </section>
-</div>
-<!-- section close -->
-
-<!-- section begin -->
-<section id="section-portfolio"></section>
-<div class="containerr">
-    <div class="split left">
-        <h1 style=" color: #ffffff;">BARBERIA</h1>
-        <a href="{{route('Barberia')}}" class="btn">VER MAS</a>
-    </div>
-    <div class="split right">
-        <h1 style=" color: #ffffff;">TATTO</h1>
-        <a href="{{route('Tattoo')}}" class="btn">VER MAS</a>
-    </div>
-</div>
-<!-- section close -->
-
-
-<!-- section begin -->
-<section id="section-contact" class="text-light no-top no-bottom index-6" data-stellar-background-ratio=".2">
-    <div class="overlay-gradient">
-        <div class="overlay-bg t80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h5><span class="id-color">Tienes alguna pregunta?</span></h5>
-                        <h2>Contactame aqui</h2>
-                    </div>
-
-                    <div class="col-md-8 col-md-offset-2 wow fadeInUp">
-                        <div class="row">
-                            <form name="contactForm" id='contact_form' class="s2" method="post" action='email.php'>
-                                <div class="col-md-6">
-                                    <div class="field-set">
-                                        <input type='text' name='name' id='name' class="form-control" placeholder="Nombre">
-                                        <div class="line-fx"></div>
-                                    </div>
-
-                                    <div class="field-set">
-                                        <input type='text' name='email' id='email' class="form-control" placeholder="Correo">
-                                        <div class="line-fx"></div>
-                                    </div>
-
-                                    <div class="field-set">
-                                        <input type='text' name='phone' id='phone' class="form-control" placeholder="Telefono">
-                                        <div class="line-fx"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="field-set">
-                                        <textarea name='message' id='message' class="form-control" placeholder="Escribe tu mensaje"></textarea>
-                                        <div class="line-fx"></div>
-                                    </div>
-                                </div>
-
-                                <div class="spacer-single"></div>
-
-                                <div class="col-md-12 text-center">
-                                    <div id='submit'>
-                                        <input type='submit' id='send_message' value='Enviar' class="btn btn-custom">
-                                    </div>
-                                    <div id='mail_success' class='success'>Your message has been sent successfully.</div>
-                                    <div id='mail_fail' class='error'>Sorry, error occured this time sending your message.</div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="spacer-double"></div>
-
-                        <div class="row text-center wow fadeInUp">
-                            <div class="col-md-4">
-                                <div class="wm-1"></div>
-                                <i class="icon_mobile id-color size40 mb20"></i>
-                                <h6 class="id-color">Telefono</h6>
-                                <h4>(208) 333 9296</h4>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="wm-1"></div>
-                                <i class="icon_house_alt id-color size40 mb20"></i>
-                                <h6 class="id-color">Direccion</h6>
-                                <h4>FACA#4586-dsfd</h4>
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="wm-1"></div>
-                                <i class="icon_mail_alt id-color size40 mb20"></i>
-                                <h6 class="id-color">Correo</h6>
-                                <h4>contact@profession.com</h4>
-                            </div>
-                        </div>
-
+            <div class="col-md-3 text-center d-flex align-items-stretch">
+                <div class="text-about py-5 px-4">
+                    <h1 class="logo">
+                        <a href="#"><span class="flaticon-scissors-in-a-hair-salon-badge"></span>BET_ Barberia Estilo Tatuajes</a>
+                    </h1>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md text-center d-flex align-items-stretch">
+                <div class="services-wrap d-flex align-items-center img" style="background-image: url(page/images/tattoo.jpg);">
+                    <div class="text">
+                        <h3>Tattoo</h3>
+                        <p><a href="{{route('Tattoo')}}" class="btn-custom">Portafolio <span class="ion-ios-arrow-round-forward"></span></a></p>
                     </div>
                 </div>
             </div>
@@ -157,11 +50,215 @@
     </div>
 </section>
 
-</div>
-<!-- section begin -->
-<section id="section-map" class="map-container no-top no-bottom" aria-label="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25214.351955908594!2d144.93916650352472!3d-37.81829399866787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sid!4v1606280383060!5m2!1sen!2sid" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex">
+            <div class="p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(page/images/bg-2.jpg);">
+                    <a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                        <span class="icon-play"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 py-md-5 pb-5 wrap-about pb-md-5 ftco-animate">
+                <div class="heading-section mb-4 mt-md-5">
+                <span class="subheading">SOBRE NOSOTROS</span>
+                    <h2 class="mb-4">Quienes somos</h2>
+                </div>
+                <div class="pb-md-5">
+                    <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- section close -->
+
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 py-md-5 pb-5 wrap-about pb-md-5 ftco-animate">
+                <div class="heading-section mb-4 mt-md-5">
+                    <span class="subheading">SOBRE NOSOTROS</span>
+                    <h2 class="mb-4">Historia</h2>
+                </div>
+                <div class="pb-md-5">
+                    <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex">
+                <div class="p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(page/images/bg-2.jpg);">
+                    <a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                        <span class="icon-play"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-team">
+    <div class="container-fluid px-md-5">
+        <div class="row justify-content-center pb-3">
+            <div class="col-md-10 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Equipo de trabajo</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="carousel-team owl-carousel">
+                    <div class="item">
+                        <a href="#" class="team text-center">
+                            <div class="img" style="background-image: url(page/images/stylist-1.jpg);"></div>
+                            <h2>Danica Lewis</h2>
+                            <span class="position">Hair Stylist</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="team text-center">
+                            <div class="img" style="background-image: url(page/images/stylist-2.jpg);"></div>
+                            <h2>Nicole Simon</h2>
+                            <span class="position">Nail Master</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="team text-center">
+                            <div class="img" style="background-image: url(page/images/stylist-3.jpg);"></div>
+                            <h2>Cloe Meyer</h2>
+                            <span class="position">Director</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="team text-center">
+                            <div class="img" style="background-image: url(page/images/stylist-4.jpg);"></div>
+                            <h2>Rachel Clinton</h2>
+                            <span class="position">Hair Stylist</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="team text-center">
+                            <div class="img" style="background-image: url(page/images/stylist-5.jpg);"></div>
+                            <h2>Dave Buff</h2>
+                            <span class="position">Barber</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        <div class="row no-gutters justify-content-center mb-5 pb-2">
+            <div class="col-md-6 text-center heading-section ftco-animate">
+                <h2 class="mb-4">Destacados</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Stylist</span>
+                        <h3><a href="project.html">Beard</a></h3>
+                    </div>
+                    <a href="page/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Haircut</a></h3>
+                    </div>
+                    <a href="page/images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Hairstylist</a></h3>
+                    </div>
+                    <a href="page/images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-4.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Haircut</a></h3>
+                    </div>
+                    <a href="page/images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-5.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Makeup</a></h3>
+                    </div>
+                    <a href="page/images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-6.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Fashion</span>
+                        <h3><a href="project.html">Model</a></h3>
+                    </div>
+                    <a href="page/images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-7.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Makeup</a></h3>
+                    </div>
+                    <a href="page/images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="project">
+                    <img src="page/images/work-8.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="text">
+                        <span>Beauty</span>
+                        <h3><a href="project.html">Makeup</a></h3>
+                    </div>
+                    <a href="page/images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                        <span class="icon-expand"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 @endsection
