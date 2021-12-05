@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Portafolio;
+use App\Experto;
 use Illuminate\Http\Request;
 
-class welcomeController extends Controller
+class WelcomeController extends Controller
 {
     public function index()
     {
@@ -14,17 +15,21 @@ class welcomeController extends Controller
 
     public function viewbarberia()
     {
-        $portafolio = Portafolio::latest()->paginate(5);
-
-        return view('home.barberia', compact('portafolio'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('home.barberia');
     }
 
     public function viewtattoo()
     {
-        $portafolio = Portafolio::latest()->paginate(5);
+        return view('home.tattoo');
+    }
 
-        return view('home.tattoo', compact('portafolio'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+    public function viewblog()
+    {
+        return view('home.blog');
+    }
+
+    public function viewcontact()
+    {
+        return view('home.contact');
     }
 }

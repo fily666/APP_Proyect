@@ -42,16 +42,16 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Descripcion</th>
-                <th>Etiqueta</th>
+                <th>Categoria</th>
                 <th>Fecha</th>
                 <th>Acciónes</th>
             </tr>
             @foreach($experto as $person)
             <tr>
                 <th>{{$person->id}} </th>
-                <td>{{$person->name}} </td>
+                <td>{{$person->title}} </td>
                 <td>{{$person->detail}} </td>
-                <td>{{$person->profesion}} </td>
+                <td>{{$person->categoria->name}} </td>
                 <td>{{$person->created_at}} </td>
                 <td>
                     <a class="btn btn-info" href="{{ route('expertos.show',$person->id) }}"><i class="bi bi-eye-fill"></i></a>

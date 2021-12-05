@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container"style="padding-top: 15%;">
+<div class="container" style="padding-top: 15%;">
     <div class="card">
         <div class="card-header">
             <h1>
-                BIENBENIDOS
+                BIENVENIDOS
             </h1>
 
             <h3>

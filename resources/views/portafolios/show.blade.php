@@ -20,9 +20,9 @@
         </div>
     </div>
     <div class="form-group row">
-        <strong class="col-md-4 col-form-label text-md-right">Etiqueta</strong>
+        <strong class="col-md-4 col-form-label text-md-right">categoria</strong>
         <div class="col-md-6">
-            {{ $portafolio->etiquetas }}
+            {{ $portafolio->categoria->name }}
         </div>
     </div>
     <div class="form-group row">

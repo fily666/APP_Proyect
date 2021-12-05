@@ -27,9 +27,15 @@
         </div>
 
         <div class="form-group row">
-            <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Etiqueta') }}</label>
+            <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
-                <input id="etiquetas" type="text" value="{{ $portafolio->etiquetas }}" class="form-control" name="etiquetas" required>
+                <select name="categoria_id" class="form-control" id="sel1" required>
+                    <option style='display: none' value="{{ $portafolio->categoria_id }}" selected>{{ $portafolio->categoria->name }}</option>
+                    <option value=""> ----- Seleccionar -----</option>
+                    @foreach($categorias as $categoria)
+                    <option value="{{ $categoria['id'] }}">{{ $categoria['name'] }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 

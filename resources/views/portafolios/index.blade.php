@@ -42,7 +42,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Descripcion</th>
-                <th>Etiqueta</th>
+                <th>categoria</th>
                 <th>Fecha</th>
                 <th>Acciónes</th>
             </tr>
@@ -51,7 +51,7 @@
                 <th>{{$Producto->id}} </th>
                 <td>{{$Producto->name}} </td>
                 <td>{{$Producto->detail}} </td>
-                <td>{{$Producto->etiquetas}} </td>
+                <td>{{$Producto->categoria->name}} </td>
                 <td>{{$Producto->created_at}} </td>
                 <td>
                     <a class="btn btn-info" href="{{ route('portafolios.show',$Producto->id) }}"><i class="bi bi-eye-fill"></i></a>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            
+
             @endforeach
         </table>
         {!! $portafolio->links() !!}

@@ -17,7 +17,8 @@ class CreatePortafoliosTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('imagen');
-            $table->string('etiquetas');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->text('detail');
             $table->timestamps();
         });

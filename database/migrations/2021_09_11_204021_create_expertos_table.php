@@ -15,8 +15,9 @@ class CreateExpertosTable extends Migration
     {
         Schema::create('expertos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('profesion');
+            $table->string('title');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->text('detail');
             $table->timestamps();
         });

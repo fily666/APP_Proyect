@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Experto extends Model
 {
     protected $fillable = [
-        'name', 'profesion', 'detail'
+        'id', 'title', 'categoria_id', 'detail'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+    public function cita()
+    {
+        return $this->belongsTo('App\Cita');
+    }
 }
