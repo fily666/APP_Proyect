@@ -41,7 +41,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Descripcion</th>
+                <th>Cargo</th>
                 <th>Categoria</th>
                 <th>Fecha</th>
                 <th>Acciónes</th>
@@ -50,7 +50,7 @@
             <tr>
                 <th>{{$person->id}} </th>
                 <td>{{$person->title}} </td>
-                <td>{{$person->detail}} </td>
+                <td>{{$person->cargo}} </td>
                 <td>{{$person->categoria->name}} </td>
                 <td>{{$person->created_at}} </td>
                 <td>

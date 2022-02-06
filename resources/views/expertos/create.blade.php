@@ -17,6 +17,13 @@
         </div>
 
         <div class="form-group row">
+            <label for="cargo" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
+            <div class="col-md-6">
+                <input id="cargo" type="text" class="form-control" name="cargo" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="etiquetas" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
             <div class="col-md-6">
                 <select name="categoria_id" class="form-control" id="sel1" required>
@@ -29,7 +36,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
+            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Perfil') }}</label>
             <div class="col-md-6">
                 <textarea id="detail" style="height:150px" class="form-control" name="detail" required></textarea>
             </div>
