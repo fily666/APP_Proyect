@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Experto extends Model
 {
     protected $fillable = [
-        'id', 'title', 'cargo', 'categoria_id', 'detail'
+        'id', 'title', 'cargo', 'categoria_id', 'foto', 'detail'
     ];
 
     public function categoria()

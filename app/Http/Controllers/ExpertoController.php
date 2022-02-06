@@ -6,6 +6,9 @@ use App\Experto;
 use App\Categoria;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
+
 class ExpertoController extends Controller
 {
     /**
@@ -52,7 +55,17 @@ class ExpertoController extends Controller
      */
     public function store(Request $request)
     {
-        Experto::create($request->all());
+        $person = new Experto();
+
+        $img = $request->file('foto')->store('public/img');
+        $foto = Storage::url($img);
+
+        $person->title = $request->title;
+        $person->cargo = $request->cargo;
+        $person->categoria_id = $request->categoria_id;
+        $person->foto = $foto;
+        $person->detail = $request->detail;
+        $person->save();
 
         return redirect()->route('expertos.index')
             ->with('success', 'Profesional creado con éxito.');
@@ -91,7 +104,17 @@ class ExpertoController extends Controller
      */
     public function update(Request $request, Experto $experto)
     {
-        $experto->update($request->all());
+        $experto->update();
+
+        $img = $request->file('foto')->store('public/img');
+        $foto = Storage::url($img);
+
+        $experto->title = $request->title;
+        $experto->cargo = $request->cargo;
+        $experto->categoria_id = $request->categoria_id;
+        $experto->foto = $foto;
+        $experto->detail = $request->detail;
+        $experto->save();
 
         return redirect()->route('expertos.index')
             ->with('warning', 'Profesional actualizado con éxito');

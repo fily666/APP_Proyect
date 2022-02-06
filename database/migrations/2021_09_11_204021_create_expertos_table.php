@@ -19,6 +19,7 @@ class CreateExpertosTable extends Migration
             $table->string('cargo');
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->string('foto');
             $table->text('detail');
             $table->timestamps();
         });

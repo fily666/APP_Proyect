@@ -7,7 +7,7 @@
     <a class="btn btn-primary" href="{{ route('expertos.index') }}"><i class="bi bi-arrow-left-circle-fill"></i> Volver</a>
 
 
-    <form action="{{ route('expertos.update',$experto->id) }}" method="POST">
+    <form action="{{ route('expertos.update',$experto->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -39,7 +39,15 @@
         </div>
 
         <div class="form-group row">
-            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
+            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+            <div class="col-md-6">
+                <input id="foto" type="file" value="{{ $experto->foto }}" class="form-control" name="foto" accept="image/*" required>
+                <img src="{{ $experto->foto }}" width="100%">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Perfil') }}</label>
             <div class="col-md-6">
                 <textarea id="detail" style="height:150px" class="form-control" name="detail" placeholder="Detail" required>{{ $experto->detail }}</textarea>
             </div>

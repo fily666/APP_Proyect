@@ -25,6 +25,13 @@
         </div>
     </div>
     <div class="form-group row">
+        <strong class="col-md-4 col-form-label text-md-right">Foto</strong>
+        <div class="col-md-6">
+            {{ $experto->foto }}
+            <img src="{{ $experto->foto }}" width="100%">
+        </div>
+    </div>
+    <div class="form-group row">
         <strong class="col-md-4 col-form-label text-md-right">Perfil </strong>
         <div class="col-md-6">
             {{ $experto->detail }}
