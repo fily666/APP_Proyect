@@ -42,7 +42,7 @@
 
 <body>
     <div id="app" class='dashboard'>
-        <div class="dashboard-nav">
+        <div class="dashboard-nav" style="background-image: url(page/images/layaut.jpg);background-position: 100% 0.5px;  font-weight: 900; background-size: cover; color:#bf925b">
             <header>
                 <a href="#!" class="menu-toggle"> <i class="bi bi-list"></i> </a>
                 <a href="#" class="brand-logo"> <i class="bi bi-archive"></i> <span>BRAND</span> </a>
@@ -95,7 +95,7 @@
             </nav>
         </div>
         <div class='dashboard-app'>
-            <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="bi bi-list"></i></a></header>
+            <header class='dashboard-toolbar' style="background-image: url(page/images/layaut.jpg);"><a href="#!" class="menu-toggle"><i class="bi bi-list"></i></a></header>
             <div class='dashboard-content'>
 
                 @yield('content')
