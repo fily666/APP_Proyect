@@ -2,7 +2,7 @@
 
     @section('content')
     <div class="container">
-        <h1>Profesionale.</h1>
+        <h1>Profesionales.</h1>
 
         <a class="btn btn-success" href="{{ route('expertos.create') }}" style="float: right;">Agregar Profesional</a>
 

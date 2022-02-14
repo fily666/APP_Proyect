@@ -9,7 +9,7 @@
             </h1>
 
             <h3>
-                Plataforma Agendin System
+                Plataforma agending System
             </h3>
 
         </div>

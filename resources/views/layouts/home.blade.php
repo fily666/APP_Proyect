@@ -46,7 +46,7 @@
                     <li class="nav-item"><a href="{{route('Tattoo')}}" class="nav-link">Tattoo</a></li>
                     <!--      <li class="nav-item"><a href="{{route('Blog')}}" class="nav-link">Blog</a></li> -->
                     <li class="nav-item"><a href="{{route('Contact')}}" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar sesion</a></li>
+                    <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar sesión</a></li>
                 </ul>
             </div>
         </div>

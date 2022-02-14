@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="precio" class="col-md-4 col-form-label text-md-right">{{ __('Presio $') }}</label>
+            <label for="precio" class="col-md-4 col-form-label text-md-right">{{ __('Precio $') }}</label>
             <div class="col-md-6">
                 <input id="precio" type="number" class="form-control" name="precio" required>
             </div>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Descripcion') }}</label>
+            <label for="detail" class="col-md-4 col-form-label text-md-right">{{ __('Descripción') }}</label>
             <div class="col-md-6">
                 <textarea id="detail" style="height:150px" class="form-control" name="detail" required></textarea>
             </div>
