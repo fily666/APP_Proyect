@@ -55,7 +55,7 @@
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('portafolios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
                 <a href="{{ route('expertos.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PROFESIONALES </a>
-                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
+                <!--    <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a> -->
                 <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="{{ route('servicios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> SERVICIOS </a>
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
@@ -95,7 +95,7 @@
             </nav>
         </div>
         <div class='dashboard-app'>
-            <header class='dashboard-toolbar' "><a href="#!" class="menu-toggle" style="color: #bf925b;"><i class="bi bi-list"></i></a></header>
+            <header class='dashboard-toolbar'><a href="#!" class="menu-toggle" style="color: #bf925b;"><i class="bi bi-list"></i></a></header>
             <div class='dashboard-content'>
 
                 @yield('content')

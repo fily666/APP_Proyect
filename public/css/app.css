@@ -177,6 +177,7 @@ h1, .h1 {
 
 .dashboard-nav a:hover {
     text-decoration: none;
+    color: #bf925b;
 }
 
 .dashboard-nav {
