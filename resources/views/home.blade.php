@@ -10,7 +10,6 @@
 
             <img src="img/logo-final2p.PNG" style="width:340px">
 
-            <a href="{{route('descargarPDF')}}">imprimir</a>
         </div>
     </div>
 </div>
