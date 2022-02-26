@@ -75,7 +75,7 @@
     <div class="container-fluid px-md-5">
         <div class="row justify-content-center pb-3">
             <div class="col-md-10 heading-section text-center ftco-animate">
-                <span class="subheading">Profecionales</span>
+                <span class="subheading">Profesionales</span>
             </div>
         </div>
         <div class="row">
