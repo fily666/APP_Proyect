@@ -14,13 +14,13 @@ class CreateServiciosTable extends Migration
     public function up()
     {
         Schema::create('servicios', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('duracion');
-            $table->unsignedBigInteger('categoria_id');
+            $table->bigIncrements('id')->comment('Clave unica del registro de Servicios');
+            $table->string('title')->comment('Servicio ofrecido');
+            $table->string('duracion')->comment('Duración del servisio');
+            $table->unsignedBigInteger('categoria_id')->comment('Clave forania del registro de categorias');
             $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->string('precio');
-            $table->text('detail');
+            $table->string('precio')->comment('Precio del servicio ofrecido');
+            $table->text('detail')->comment('Detalle del servicio');
             $table->timestamps();
         });
     }

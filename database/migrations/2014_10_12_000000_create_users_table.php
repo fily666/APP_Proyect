@@ -14,19 +14,19 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+            $table->bigIncrements('id')->comment('Clave unica del registro de roles');
+            $table->string('name')->comment('Nombre de la categoria');
             $table->timestamps();
         });
 
 
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->integer('role_id')->default('2');
+            $table->id()->comment('Clave unica del registro de usuarios');
+            $table->string('name')->comment('Nombre completo del usuario');
+            $table->string('email')->unique()->comment('Correo electronico');
+            $table->timestamp('email_verified_at')->nullable()->comment('Verificacion de correo electronico');
+            $table->string('password')->comment('Contraseña');
+            $table->integer('role_id')->default('2')->comment('Rol del usiario');
             $table->rememberToken();
             $table->timestamps();
         });

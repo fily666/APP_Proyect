@@ -14,19 +14,19 @@ class CreateCitasTable extends Migration
     public function up()
     {
         Schema::create('citas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->comment('Clave unica del registro de citas');
 
-            $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('categoria_id')->comment('Clave forania del registro de categorias');
             $table->foreign('categoria_id')->references('id')->on('categorias');
 
-            $table->unsignedBigInteger('title');
+            $table->unsignedBigInteger('title')->comment('Clave forania del registro de Servicios');
             $table->foreign('title')->references('id')->on('servicios');
 
-            $table->unsignedBigInteger('resourceId');
+            $table->unsignedBigInteger('resourceId')->comment('Clave forania del registro de profesionales o expertos');
             $table->foreign('resourceId')->references('id')->on('expertos');
 
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->dateTime('start')->comment('Fecha inicio de la cita');
+            $table->dateTime('end')->comment('Fecha fin de la cita');
             $table->timestamps();
         });
     }
