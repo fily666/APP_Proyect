@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Iniciar sesión</button>
+                <button type="submit" name="Login"  class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Iniciar sesión</button>
 
                 <div class="text-center">
                     @if (Route::has('password.request'))

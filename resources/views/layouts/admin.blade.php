@@ -58,7 +58,7 @@
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
                 <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="{{ route('servicios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> SERVICIOS </a>
-                <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
+                <a href="{{ route('usuarios.index') }}"name="Usuarios" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="{{ route('reportes.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
                 @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
                 <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
@@ -79,13 +79,13 @@
                 @endif
 
                 @else
-                <div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="bi bi-person-circle"></i> {{ Auth::user()->name }} </a>
-                    <div class='dashboard-nav-dropdown-menu'>
-                        <a href="{{ route('logout') }}" class="dashboard-nav-dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <div name="cerrar1" class='dashboard-nav-dropdown'>
+                    <a href="#!"  class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="bi bi-person-circle"></i> {{ Auth::user()->name }} </a>
+                    <div name="cerrar2" class='dashboard-nav-dropdown-menu'>
+                        <a href="{{ route('logout') }}"  class="dashboard-nav-dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form"  action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                         @endguest

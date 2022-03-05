@@ -52,9 +52,9 @@
                 <td>{{$userr->email}} </td>
                 <td>{{$userr->created_at}} </td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('usuarios.show',$userr->id) }}"><i class="bi bi-eye-fill"></i></a>
-                    <a class="btn btn-primary" href="{{ route('usuarios.edit',$userr->id) }}"><i class="bi bi-pencil-fill"></i></a>
-                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-eraser-fill"></i></button>
+                    <a class="btn btn-info" name="ver_usuario" href="{{ route('usuarios.show',$userr->id) }}"><i class="bi bi-eye-fill"></i></a>
+                    <a class="btn btn-primary" name="edit_usuario" href="{{ route('usuarios.edit',$userr->id) }}"><i class="bi bi-pencil-fill"></i></a>
+                    <button type="submit" name="delete_usuario" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-eraser-fill"></i></button>
                 </td>
             </tr>
 
@@ -74,13 +74,13 @@
                             <form action="{{ route('usuarios.destroy',$userr->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Confirmar</button>
+                                <button type="submit" name="Confirdelate" class="btn btn-danger">Confirmar</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             @endforeach
         </table>
         {!! $usuario->links() !!}
