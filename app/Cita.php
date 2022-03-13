@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Cita extends Model
 {
     protected $fillable = [
-        'id', 'categoria_id', 'title', 'resourceId', 'start', 'end'
+        'id',
+        'user_id',
+        'categoria_id',
+        'title',
+        'resourceId',
+        'start',
+        'end',
+        'status',
     ];
 
     public function categoria()
@@ -18,9 +25,12 @@ class Cita extends Model
     {
         return $this->belongsTo('App\Servicio', 'title', 'id');
     }
-
     public function experto()
     {
         return $this->belongsTo('App\Experto', 'resourceId', 'id');
+    }
+    public function usuario()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 }

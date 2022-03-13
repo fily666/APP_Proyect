@@ -27,6 +27,12 @@ class CreateCitasTable extends Migration
 
             $table->dateTime('start')->comment('Fecha inicio de la cita');
             $table->dateTime('end')->comment('Fecha fin de la cita');
+
+            $table->string('status')->default('Pendiente')->comment('Estado de la cita');
+
+            $table->unsignedBigInteger('user_id')->comment('Clave forania del registro de usuarios');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

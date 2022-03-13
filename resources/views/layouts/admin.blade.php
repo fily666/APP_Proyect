@@ -50,7 +50,7 @@
             <nav class="dashboard-nav-list">
 
                 @if(Auth::check())
-                @if(Auth::user()->role_id && Auth::user()->role_id == 1)
+                @if(Auth::user()->role_id == 1)
                 <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="{{ route('portafolios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> PORTAFOLIO </a>
@@ -60,7 +60,7 @@
                 <a href="{{ route('servicios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> SERVICIOS </a>
                 <a href="{{ route('usuarios.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> USUARIOS </a>
                 <a href="{{ route('reportes.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
-                @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
+                @elseif(Auth::user()->role_id == 2)
                 <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
                 <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>

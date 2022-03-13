@@ -7,6 +7,8 @@ use App\Categoria;
 use App\Servicio;
 use App\Experto;
 
+use Auth;
+
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
@@ -28,19 +30,22 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $reserva = Cita::all();
-
         $expertos = Experto::all();
         $servicios = Servicio::all();
 
-        return view(
-            'citas.index',
-            [
-                'rese' => $reserva,
-                'serv' => $servicios,
-                'expe' => $expertos
-            ]
-        );
+        $user_autt = Auth::user()->id;
+
+        if (Auth::user()->role_id == 2) {
+            $reserva = Cita::where('user_id', $user_autt)->get();
+        } else {
+            $reserva = Cita::all();
+        }
+
+        return view('citas.index', [
+            'rese' => $reserva,
+            'serv' => $servicios,
+            'expe' => $expertos,
+        ]);
     }
 
     /**
@@ -53,15 +58,12 @@ class CitaController extends Controller
         $categorias = Categoria::all();
         $servicios = Servicio::all();
         $expertos = Experto::all();
-        
-        return view(
-            'citas.create',
-            [
-                'cate' => $categorias,
-                'serv' => $servicios,
-                'expe' => $expertos
-            ]
-        );
+
+        return view('citas.create', [
+            'cate' => $categorias,
+            'serv' => $servicios,
+            'expe' => $expertos,
+        ]);
     }
 
     /**
@@ -72,9 +74,19 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        Cita::create($request->all());
+        $cita = new Cita();
 
-        return redirect()->route('citas.index')
+        $cita->id = $request->id;
+        $cita->user_id = $request->user()->id;
+        $cita->categoria_id = $request->categoria_id;
+        $cita->title = $request->title;
+        $cita->resourceId = $request->resourceId;
+        $cita->start = $request->start;
+        $cita->end = $request->end;
+        $cita->save();
+
+        return redirect()
+            ->route('citas.index')
             ->with('success', 'Cita creada con éxito.');
     }
 
@@ -86,7 +98,16 @@ class CitaController extends Controller
      */
     public function show(Cita $cita)
     {
-        return view('citas.show', compact('cita'));
+        $categorias = Categoria::all();
+        $servicios = Servicio::all();
+        $expertos = Experto::all();
+
+        return view('citas.show', [
+            'cate' => $categorias,
+            'serv' => $servicios,
+            'expe' => $expertos,
+            'cita' => $cita,
+        ]);
     }
 
     /**
@@ -97,7 +118,16 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        return view('citas.edit', compact('cita'));
+        $categorias = Categoria::all();
+        $servicios = Servicio::all();
+        $expertos = Experto::all();
+
+        return view('citas.edit', [
+            'cate' => $categorias,
+            'serv' => $servicios,
+            'expe' => $expertos,
+            'cita' => $cita,
+        ]);
     }
 
     /**
@@ -109,9 +139,13 @@ class CitaController extends Controller
      */
     public function update(Request $request, Cita $cita)
     {
-        $cita->update($request->all());
+        $cita->update();
 
-        return redirect()->route('citas.index')
+        $cita->status = $request->status;
+        $cita->save();
+
+        return redirect()
+            ->route('citas.index')
             ->with('warning', 'Cita actualizada con éxito');
     }
 
@@ -125,7 +159,8 @@ class CitaController extends Controller
     {
         $cita->delete();
 
-        return redirect()->route('citas.index')
+        return redirect()
+            ->route('citas.index')
             ->with('danger', 'Cita eliminada correctamente');
     }
 }

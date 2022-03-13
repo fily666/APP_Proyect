@@ -38,7 +38,7 @@
     @endif
 
     @if(Auth::check())
-    @if(Auth::user()->role_id && Auth::user()->role_id == 1)
+    @if(Auth::user()->role_id == 1)
     <br>
     <br>
     <hr>
@@ -48,38 +48,45 @@
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>categoria_id</th>
-            <th>title</th>
-            <th>resourceId</th>
-            <th>start</th>
-            <th>end</th>
+            <th>categoria - Servicio</th>
+            <th>Profecional</th>
+            <th>Fecha Inicio - Fecha Fin</th>
+            <th>Cliente</th>
+            <th>Estado</th>
+            <th>Admin</th>
         </tr>
         @foreach($rese as $prueba)
         <tr>
             <th>{{$prueba->id}}</th>
-            <th>{{$prueba->categoria->name}}</th>
-            <th>{{$prueba->title = $prueba->servicio->title}}</th>
+            <th>{{$prueba->categoria->name}} <br> {{$prueba->title = $prueba->servicio->title}}</th>
             <th>{{$prueba->experto->title}}</th>
-            <th>{{$prueba->start}}</th>
-            <th>{{$prueba->end}}</th>
+            <th>{{$prueba->start}} <br> {{$prueba->end}}</th>
+            <th>{{$prueba->usuario->name}}</th>
+            <th>{{$prueba->status}}</th>
+            <td>
+                <a class="btn btn-info" href="{{ route('citas.show',$prueba->id) }}"><i class="bi bi-eye-fill"></i></a>
+                <a class="btn btn-primary" href="{{ route('citas.edit',$prueba->id) }}"><i
+                        class="bi bi-pencil-fill"></i></a>
+            </td>
         </tr>
         @endforeach
     </table>
     <hr>
-    @elseif(Auth::user()->role_id && Auth::user()->role_id == 2)
+    @elseif(Auth::user()->role_id == 2)
     <br>
     <br>
     <hr>
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>categoria_id</th>
-            <th>title</th>
-            <th>resourceId</th>
-            <th>start</th>
-            <th>end</th>
+            <th>categoria</th>
+            <th>Servicio</th>
+            <th>Profecional</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Estado</th>
         </tr>
-        @foreach($rese as $prueba)
+        @foreach($rese as $prueba) 
         <tr>
             <th>{{$prueba->id}}</th>
             <th>{{$prueba->categoria->name}}</th>
@@ -87,6 +94,7 @@
             <th>{{$prueba->experto->title}}</th>
             <th>{{$prueba->start}}</th>
             <th>{{$prueba->end}}</th>
+            <th>{{$prueba->status}}</th>
         </tr>
         @endforeach
     </table>
@@ -105,38 +113,38 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
 
-        var prueba1 = <?php echo $rese ?>;
-        console.log(prueba1);
+    var prueba1 = <?php echo $rese ?>;
+    console.log(prueba1);
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
 
-            locale: "es",
+        locale: "es",
 
-            headerToolbar: {
-                left: 'prev,next,today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,listWeek,resourceTimeGridDay,resourceTimeGridFourDay'
-            },
-            views: {
-                resourceTimeGridFourDay: {
-                    type: 'resourceTimeGrid',
-                    duration: {
-                        days: 4
-                    },
-                    buttonText: '4 days'
-                }
-            },
-            resources: <?php echo $expe ?>,
+        headerToolbar: {
+            left: 'prev,next,today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,listWeek,resourceTimeGridDay,resourceTimeGridFourDay'
+        },
+        views: {
+            resourceTimeGridFourDay: {
+                type: 'resourceTimeGrid',
+                duration: {
+                    days: 4
+                },
+                buttonText: '4 days'
+            }
+        },
+        resources: <?php echo $expe ?>,
 
-            events: <?php echo $rese ?>
-        });
-        calendar.render();
-
+        events: <?php echo $rese ?>
     });
+    calendar.render();
+
+});
 </script>
 
 @endsection
