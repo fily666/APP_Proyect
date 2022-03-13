@@ -14,6 +14,7 @@ class CreateCitasTable extends Migration
     public function up()
     {
         Schema::create('citas', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->bigIncrements('id')->comment('Clave unica del registro de citas');
 
             $table->unsignedBigInteger('categoria_id')->comment('Clave forania del registro de categorias');

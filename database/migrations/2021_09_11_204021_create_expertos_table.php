@@ -14,6 +14,7 @@ class CreateExpertosTable extends Migration
     public function up()
     {
         Schema::create('expertos', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->bigIncrements('id')->comment('Clave unica del registro de profesionales o expertos');
             $table->string('title')->comment('Nombre del profesional');
             $table->string('cargo')->comment('Cargo del profesional');

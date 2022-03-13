@@ -14,6 +14,7 @@ class CreateServiciosTable extends Migration
     public function up()
     {
         Schema::create('servicios', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->bigIncrements('id')->comment('Clave unica del registro de Servicios');
             $table->string('title')->comment('Servicio ofrecido');
             $table->string('duracion')->comment('Duración del servisio');

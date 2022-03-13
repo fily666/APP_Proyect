@@ -14,6 +14,7 @@ class CreatePortafoliosTable extends Migration
     public function up()
     {
         Schema::create('portafolios', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->bigIncrements('id')->comment('Clave unica del registro de articulos del portafolio');
             $table->string('name')->comment('Nombre del articulo');
             $table->string('imagen')->comment('Imagen del articulo de la galeria');
