@@ -32,6 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('citas', 'CitaController');
 Route::resource('reportes', 'ReporteController');
+route::get('/pdf', 'ReporteController@PDF')->name('descargarPDF');
 
 /*  URL del Admin - Rol Admin*/
 Route::group(['middleware' => 'admin'], function () {
