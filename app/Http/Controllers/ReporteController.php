@@ -30,16 +30,32 @@ class ReporteController extends Controller
      */
     public function index()
     {
-        $reserva = Cita::all();
         $expertos = Experto::all();
         $servicios = Servicio::all();
+
+        $user_autt = Auth::user()->id;
+
+        if (Auth::user()->role_id == 2) {
+            $reserva = Cita::where('user_id', $user_autt)->get();
+            $count_bar = 0;
+            $count_tatt = 0;
+
+        } else {
+            $reserva = Cita::all();
+            $count_bar = Cita::where('categoria_id',1)->count();
+            $count_tatt = Cita::where('categoria_id',2)->count();
+        }
+
+
 
         return view(
             'reportes.index',
             [
                 'rese' => $reserva,
                 'serv' => $servicios,
-                'expe' => $expertos
+                'expe' => $expertos,
+                'bar' => $count_bar,
+                'tatt' => $count_tatt
             ]
         );
     }
@@ -56,7 +72,6 @@ class ReporteController extends Controller
         } else {
             $reserva = Cita::all();
         }
-
 
         $pdf = PDF::loadview('reportes.prueba', [
             'rese' => $reserva,

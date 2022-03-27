@@ -5,12 +5,11 @@
 
     <a href="{{route('descargarPDF')}}"><button type="button" class="btn btn-info">imprimir</button></a>
 
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-
     @if(Auth::check())
     @if(Auth::user()->role_id == 1)
-    <br>
-    <br>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    @endif
+    @endif
     <hr>
     <table class="table table-bordered">
         <tr>
@@ -33,33 +32,6 @@
         @endforeach
     </table>
     <hr>
-    @elseif(Auth::user()->role_id == 2)
-    <br>
-    <br>
-    <hr>
-    <table class="table table-bordered">
-        <tr>
-            <th>Id</th>
-            <th>categoria_id</th>
-            <th>title</th>
-            <th>resourceId</th>
-            <th>start</th>
-            <th>end</th>
-        </tr>
-        @foreach($rese as $prueba)
-        <tr>
-            <th>{{$prueba->id}}</th>
-            <th>{{$prueba->categoria->name}}</th>
-            <th>{{$prueba->title = $prueba->servicio->title}}</th>
-            <th>{{$prueba->experto->title}}</th>
-            <th>{{$prueba->start}}</th>
-            <th>{{$prueba->end}}</th>
-        </tr>
-        @endforeach
-    </table>
-    <hr>
-    @endif
-    @endif
 </div>
 
 
@@ -71,18 +43,20 @@ google.charts.load('current', {
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
+
+    var bar2 = <?php echo $bar ?>;
+    var tatt2 = <?php echo $tatt ?>;
+
+
     var data = google.visualization.arrayToDataTable([
-        ['Year', 'Sales', 'Expenses'],
-        ['2013', 1000, 400],
-        ['2014', 1170, 460],
-        ['2015', 660, 1120],
-        ['2016', 1030, 540]
+        ['cita', 'Barberia', 'Tattoo'],
+        ['CITAS', bar2, tatt2],
     ]);
 
     var options = {
-        title: 'Company Performance',
+        title: 'Reporte de citas',
         hAxis: {
-            title: 'Year',
+            title: 'Citas agendadas ',
             titleTextStyle: {
                 color: '#333'
             }

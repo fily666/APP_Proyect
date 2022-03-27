@@ -63,7 +63,7 @@
                 @elseif(Auth::user()->role_id == 2)
                 <a href="{{ route('home') }}" class="dashboard-nav-item"><i class="bi bi-house-door-fill"></i> HOME </a>
                 <div class="nav-item-divider"></div>
-                <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a>
+                <!--    <a href="#" class="dashboard-nav-item"><i class="bi bi-gear"></i> COTIZACIONES </a> -->
                 <a href="{{ route('citas.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> RESERVACIONES </a>
                 <a href="{{ route('reportes.index') }}" class="dashboard-nav-item"><i class="bi bi-gear"></i> REPORTES </a>
                 <br> <br> <br> <br> <br>
