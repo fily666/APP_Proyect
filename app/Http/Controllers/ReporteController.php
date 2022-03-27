@@ -45,9 +45,7 @@ class ReporteController extends Controller
             $count_bar = Cita::where('categoria_id',1)->count();
             $count_tatt = Cita::where('categoria_id',2)->count();
         }
-
-
-
+        
         return view(
             'reportes.index',
             [

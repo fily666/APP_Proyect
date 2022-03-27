@@ -4,7 +4,6 @@
 <div class="container">
 
     <a href="{{route('descargarPDF')}}"><button type="button" class="btn btn-info">imprimir</button></a>
-
     @if(Auth::check())
     @if(Auth::user()->role_id == 1)
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
@@ -46,7 +45,6 @@ function drawChart() {
 
     var bar2 = <?php echo $bar ?>;
     var tatt2 = <?php echo $tatt ?>;
-
 
     var data = google.visualization.arrayToDataTable([
         ['cita', 'Barberia', 'Tattoo'],
