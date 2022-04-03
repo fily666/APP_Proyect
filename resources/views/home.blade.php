@@ -8,7 +8,7 @@
                 BIENVENIDOS
             </h1>
 
-            <img src="img/logo-final2p.PNG" style="width:340px">
+            <img src="img/logo-final2p.png" style="width:340px">
 
         </div>
     </div>
